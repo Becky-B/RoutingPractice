@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Router } from '@reach/router';
+import Home from './components/Home';
+import String from './components/String_Num';
 import './App.css';
+import String_Num from './components/String_Num';
+import Colorful from './components/Colorful';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Home path = "/Home"/>
+        <String_Num path = "/:param"/>
+        <Colorful path = "/:word/:txtcolor/:bgcolor"/>
+      </Router>
     </div>
   );
 }
-
 export default App;
